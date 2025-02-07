@@ -1,7 +1,7 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
-import { SerengetiDefaultModule } from './app/app.module';
+import { SerengetiCiCdModule } from './app/app.module';
 
 
-platformBrowserDynamic().bootstrapModule(SerengetiDefaultModule)
+platformBrowserDynamic().bootstrapModule(SerengetiCiCdModule)
   .catch(err => console.error(err));

@@ -3,7 +3,7 @@ import { Component, WritableSignal } from '@angular/core';
 import { NavSignalService } from './service/nav.signal.service';
 
 @Component({
-  selector: 'lib-프로젝트 명 변경-mock-main',
+  selector: 'lib-serengeti-cicd-mock-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })

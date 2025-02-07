@@ -1,5 +1,5 @@
 {
-  "name": "@serengeti/프로젝트 명 변경",
+  "name": "@serengeti/serengeti-cicd",
   "version": "3.0.0-snapshot",
   "license": "MIT",
   "publishConfig": {

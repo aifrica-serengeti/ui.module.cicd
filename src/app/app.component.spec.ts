@@ -12,16 +12,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title '프로젝트 명 변경'`, () => {
+  it(`should have as title 'serengeti-cicd'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('프로젝트 명 변경');
+    expect(app.title).toEqual('serengeti-cicd');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('프로젝트 명 변경 app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('serengeti-cicd app is running!');
   });
 });

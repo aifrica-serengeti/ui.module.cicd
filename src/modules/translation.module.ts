@@ -36,7 +36,7 @@ const translationOptions = {
   ],
   exports: [ TranslateModule ]
 })
-export class SerengetiDefaultModuleTranslation {
+export class SerengetiCiCdModuleTranslation {
   constructor(private translate: TranslateService) {
     // 환경 변수에 따라 프로덕션 환경과 개발 환경을 구분하여 초기화
     if (environment.production) {

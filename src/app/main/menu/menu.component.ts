@@ -5,7 +5,7 @@ import { NavSignalService } from '../service/nav.signal.service';
 import { menu } from './menu.mock.data';
 
 @Component({
-  selector: 'lib-프로젝트 명 변경-mock-menu',
+  selector: 'lib-serengeti-cicd-mock-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss']
 })

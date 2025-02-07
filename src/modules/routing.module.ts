@@ -32,4 +32,4 @@ export const rootRoutes: Routes = [
   ],
   exports: [ RouterModule ]
 })
-export class SerengetiDefaultModuleRouting { }
+export class SerengetiCiCdModuleRouting { }

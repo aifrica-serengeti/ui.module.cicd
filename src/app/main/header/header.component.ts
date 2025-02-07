@@ -4,7 +4,7 @@ import { NavSignalService } from '../service/nav.signal.service';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'lib-프로젝트 명 변경-mock-header',
+  selector: 'lib-serengeti-cicd-mock-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })

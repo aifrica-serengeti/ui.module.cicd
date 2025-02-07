@@ -9,8 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SerengetiThemeUIModule } from '../modules/theme/theme.module';
 import { SerengetiCommonUIModule } from '../modules/common.ui.module';
 import { SerengetiCommonMaterialModule } from '@serengeti/serengeti-common-material';
-import { SerengetiDefaultModuleRouting } from '../modules/routing.module';
-import { SerengetiDefaultModuleTranslation } from '../modules/translation.module';
+import { SerengetiCiCdModuleRouting } from '../modules/routing.module';
+import { SerengetiCiCdModuleTranslation } from '../modules/translation.module';
 
 import { environment } from '../environments/environment';
 import { Configurations } from '../config/Configuration';
@@ -41,22 +41,22 @@ import { HeaderMockComponent } from './main/header/header.component';
     HttpClientModule,
 
     SerengetiCommonMaterialModule,
-    SerengetiDefaultModuleRouting,
-    SerengetiDefaultModuleTranslation
+    SerengetiCiCdModuleRouting,
+    SerengetiCiCdModuleTranslation
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class SerengetiDefaultModule {
+export class SerengetiCiCdModule {
   constructor() {}
 
-  public static forRoot(config: Configurations): ModuleWithProviders<SerengetiDefaultModule> {
+  public static forRoot(config: Configurations): ModuleWithProviders<SerengetiCiCdModule> {
     Configurations.setGlobalConfig(config);
 
-    return { ngModule: SerengetiDefaultModule };
+    return { ngModule: SerengetiCiCdModule };
   }
 
-  public static forModule(config: Configurations) : ModuleWithProviders<SerengetiDefaultModule> {
+  public static forModule(config: Configurations) : ModuleWithProviders<SerengetiCiCdModule> {
     const module = removeRoutingModule();
     Configurations.setGlobalConfig(config);
 
@@ -66,7 +66,7 @@ export class SerengetiDefaultModule {
 
 // module 로 활용 시에 라우팅 옵션을 제거하는 함수
 export function removeRoutingModule() {
-  const module = Object.assign({}, SerengetiDefaultModule as any);
+  const module = Object.assign({}, SerengetiCiCdModule as any);
 
   for (let idx in module) {
     // 모듈 search 시 object 가 아닌 것들은 스킵
@@ -85,7 +85,7 @@ export function removeRoutingModule() {
 
         for (let idx2 in imports) {
           let name = imports[idx2].name;
-          if (imports[idx2] !== SerengetiDefaultModuleRouting) {
+          if (imports[idx2] !== SerengetiCiCdModuleRouting) {
             newImports.push(imports[idx2]);
           }
         }

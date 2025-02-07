@@ -6,27 +6,27 @@ read -p "ex) serengeti-login : " NEW_PROJECT_NAME
 echo "새로운 모듈 명을 입력해 주세요. 모듈 명은 Pascal Case 규칙을 따릅니다."
 read -p "ex) SerengetiLoginModule : " NEW_MODULE_NAME
 
-echo "프로젝트 명 변경 진행 중..."
+echo "serengeti-cicd 진행 중..."
 # 디렉토리 아래의 모든 파일을 찾음
 find ./ -type f -not -name "init.sh" |
 # 파일을 순회하면서 변경된 파일 출력
 while IFS= read -r file; do
-    if grep -q "프로젝트 명 변경" "$file"; then
+    if grep -q "serengeti-cicd" "$file"; then
         # 파일 내용 변경 후 결과를 파일에 씀 (Mac OS 호환)
-        sed -i '' "s/프로젝트 명 변경/$NEW_PROJECT_NAME/g" "$file"
+        sed -i '' "s/serengeti-cicd/$NEW_PROJECT_NAME/g" "$file"
         echo "$file has changes"
     fi
 done
-echo -e "프로젝트 명 변경 완료!\n"
+echo -e "serengeti-cicd 완료!\n"
 
 echo "모듈 명 변경 진행 중..."
 # 디렉토리 아래의 모든 파일을 찾음
 find ./ -type f -not -name "init.sh" |
 # 파일을 순회하면서 변경된 파일 출력
 while IFS= read -r file; do
-    if grep -q "SerengetiDefaultModule" "$file"; then
+    if grep -q "SerengetiCiCdModule" "$file"; then
         # 파일 내용 변경 후 결과를 파일에 씀 (Mac OS 호환)
-        sed -i '' "s/SerengetiDefaultModule/$NEW_MODULE_NAME/g" "$file"
+        sed -i '' "s/SerengetiCiCdModule/$NEW_MODULE_NAME/g" "$file"
         echo "$file has changes"
     fi
 done

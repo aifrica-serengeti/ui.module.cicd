@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "프로젝트 명 변경": {
+    "serengeti-cicd": {
       "projectType": "library",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
-            "outputPath": "dist/프로젝트 명 변경",
+            "outputPath": "dist/serengeti-cicd",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -96,10 +96,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "프로젝트 명 변경:build:production"
+              "buildTarget": "serengeti-cicd:build:production"
             },
             "development": {
-              "buildTarget": "프로젝트 명 변경:build:development"
+              "buildTarget": "serengeti-cicd:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -107,7 +107,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "프로젝트 명 변경:build"
+            "buildTarget": "serengeti-cicd:build"
           }
         },
         "test": {
@@ -145,11 +145,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "프로젝트 명 변경:serve"
+            "devServerTarget": "serengeti-cicd:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "프로젝트 명 변경:serve:production"
+              "devServerTarget": "serengeti-cicd:serve:production"
             }
           }
         }

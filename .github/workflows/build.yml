@@ -1,0 +1,15 @@
+name: angular-library
+on:
+  push:
+    branches: ["master"]
+    paths-ignore:
+      - .github/**
+      - .values/**
+    workflow_dispatch: {}
+jobs:
+  call-maven-workflow:
+    uses: aifrica-serengeti/devops.workflow/.github/workflows/angular-library.yml@master
+    secrets: inherit
+    with:
+      node_version: 18.13.0
+      dispatch_url: https://github.com/aifrica-serengeti/ui.serengeti/actions/workflows/build.yml
