@@ -1,0 +1,30 @@
+<ng-container>
+    <nav
+        (mouseenter)="hoverEvent('enter')"
+        (mouseleave)="hoverEvent('leave')"
+        [ngClass]="{ 'close': !navOpen(), 'hover': isHover() }"
+    >
+        <div class="nav-header">
+            <div class="nav-header-logo">
+                <common-icon [icon]="'logo'" [customSize]="1.875"></common-icon>
+                @if (navOpen() || isHover()) {
+                    <span>Serengeti</span>
+                }
+            </div>
+            <div class="nav-toggle-button" [ngClass]="{ 'nav-close': !(navOpen() || isHover()) }" (click)="navOpenEvent()">
+                @if (navOpen()) {
+                    <common-icon [icon]="'chevrons_left'"></common-icon>
+                } @else {
+                    <common-icon [icon]="'chevrons_right'"></common-icon>
+                }
+            </div>
+        </div>
+        <lib-프로젝트 명 변경-mock-menu></lib-프로젝트 명 변경-mock-menu>
+    </nav>
+    <main [ngClass]="{ 'close': !navOpen(), 'hover': isHover() }">
+        <lib-프로젝트 명 변경-mock-header></lib-프로젝트 명 변경-mock-header>
+        <section>
+            <router-outlet></router-outlet>
+        </section>
+    </main>
+</ng-container>

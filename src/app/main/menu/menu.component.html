@@ -1,0 +1,76 @@
+<div class="app-menu" #appMenu>
+    <!-- workspaces -->
+    <div class="app-mock-menu-group"
+         [ngClass]="{ 'nav-close': !(navOpen() || isHover())}"
+    >
+        @if (navOpen() || isHover()) {
+            <span>Workspaces</span>
+        }
+    </div>
+    @for (menu of workspacesMenus; track menu) {
+        <div class="app-mock-menu-header">
+            <div class="chevron-down-icon-box"
+                 [ngClass]="{ 'nav-close': !(navOpen() || isHover()) }"
+            >
+                <common-icon [ngClass]="{ 'hide': !menu.hasChildren,  'nav-close': !(navOpen() || isHover()) }" [icon]="'chevron_down'"></common-icon>
+            </div>
+            @if (menu.icon) {
+                <common-icon class="menu-icon" [icon]="menu.icon" [color]="'#262626'"></common-icon>
+            }
+            <div class="title-menu-name" [ngClass]="{ 'nav-close': !(navOpen() || isHover())}">
+                @if (navOpen() || isHover()) {
+                    <span>{{ menu.title }}</span>
+                }
+            </div>
+        </div>
+    }
+    <!-- admin -->
+    <div class="app-mock-menu-group"
+         [ngClass]="{ 'nav-close': !(navOpen() || isHover())}"
+    >
+        @if (navOpen() || isHover()) {
+            <span>Operations & Settings</span>
+        }
+    </div>
+    @for (menu of adminMenus; track menu) {
+        <div class="app-mock-menu-header">
+            <div class="chevron-down-icon-box"
+                 [ngClass]="{ 'nav-close': !(navOpen() || isHover()) }"
+            >
+                <common-icon [ngClass]="{ 'hide': !menu.hasChildren,  'nav-close': !(navOpen() || isHover()) }" [icon]="'chevron_down'"></common-icon>
+            </div>
+            @if (menu.icon) {
+                <common-icon class="menu-icon" [icon]="menu.icon" [color]="'#262626'"></common-icon>
+            }
+            <div class="title-menu-name" [ngClass]="{ 'nav-close': !(navOpen() || isHover())}">
+                @if (navOpen() || isHover()) {
+                    <span>{{ menu.title }}</span>
+                }
+            </div>
+        </div>
+    }
+    <!-- bookmark -->
+    <div class="app-mock-menu-group"
+         [ngClass]="{ 'nav-close': !(navOpen() || isHover())}"
+    >
+        @if (navOpen() || isHover()) {
+            <span>Routes 목록</span>
+        }
+    </div>
+    <div class="bookmark-icon"
+         [ngClass]="{ 'nav-close': !(navOpen() || isHover())}"
+    >
+        @if (!(navOpen() || isHover())) {
+            <common-icon class="menu-icon" [icon]="'star'" [color]="'#262626'"></common-icon>
+        }
+    </div>
+    @for(route of customRoutes; track route) {
+        <div class="app-mock-menu-header" (click)="moveCustomRoute(route.url)">
+            @if (navOpen() || isHover()) {
+                <div class="title-menu-name">
+                    <span class="custom-routes">{{ route.name }}</span>
+                </div>
+            }
+        </div>
+    }
+</div>

@@ -1,0 +1,66 @@
+<ng-container>
+    <div class="header-menu-info"
+         [ngClass]="{ 'hover': navSignal.isHover() }"
+    ></div>
+    <div class="header-service-content">
+        <common-search [placeholder]="'메뉴 검색'" [backgroundColor]="'#f7f7f7'"></common-search>
+        <div class="header-notification-service">
+            <common-icon [icon]="'bell'"></common-icon>
+        </div>
+        <div class="header-help-service">
+            <common-icon [icon]="'help'"></common-icon>
+        </div>
+        <div class="header-add-service">
+            <common-icon [icon]="'pointer'"></common-icon>
+        </div>
+        <div class="header-user-service" [matMenuTriggerFor]="userMenu.menu">
+            <div class="user-icon">A</div>
+            <span class="user-id">Administrator</span>
+            <common-icon [icon]="'right'"></common-icon>
+        </div>
+    </div>
+</ng-container>
+
+<common-menu #userMenu>
+    <common-menu-item class="nested-menu" (click)="setSession()">
+        <span>세션 재설정</span>
+    </common-menu-item>
+    <common-menu-item class="nested-menu" (click)="setSession()" [nestedMenu]="languageMenu.menu">
+        <span>언어 변경</span>
+    </common-menu-item>
+</common-menu>
+
+<common-menu #languageMenu>
+    <common-menu-item (click)="langChange('ko-kr')">
+        <div class="language-menu-content">
+            <span>한국어</span>
+            @if (language === 'ko-kr') {
+            <common-icon [icon]="'check'"></common-icon>
+            }
+        </div>
+    </common-menu-item>
+    <common-menu-item (click)="langChange('en-us')">
+        <div class="language-menu-content">
+            <span>English</span>
+            @if (language === 'en-us') {
+            <common-icon [icon]="'check'"></common-icon>
+            }
+        </div>
+    </common-menu-item>
+    <common-menu-item (click)="langChange('ja-jp')">
+        <div class="language-menu-content">
+            <span>日本語</span>
+            @if (language === 'ja-jp') {
+            <common-icon [icon]="'check'"></common-icon>
+            }
+        </div>
+    </common-menu-item>
+    <common-menu-item (click)="langChange('zh-cn')">
+        <div class="language-menu-content">
+            <span>中国人</span>
+            @if (language === 'zh-cn') {
+            <common-icon [icon]="'check'"></common-icon>
+            }
+        </div>
+    </common-menu-item>
+</common-menu>
